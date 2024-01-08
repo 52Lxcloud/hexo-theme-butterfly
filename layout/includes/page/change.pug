@@ -1,0 +1,21 @@
+- var pageBackground = 'background: url(' + page.top_bg + ') left 50% / cover no-repeat;'
+
+#card-content
+  .content.content-item.card-content.single(style=pageBackground)
+    .card-content
+      .content-item-tips= page.top_item || _p('Hallo 凉心！')
+      span.content-item-title= page.top_title || page.title || _p('晚点晚安')
+      .content-bottom
+        .tips= page.top_tips || page.description || _p('相逢即是下山时.')
+
+        - if (typeof page.top_link !== 'undefined' && page.top_link && page.top_link.trim().length > 0)
+          if (page.top_link.startsWith('/'))
+            - var pageLink = '' + page.top_link + ''
+          else if (!page.top_link.startsWith('http') && !page.top_link.startsWith('https'))
+            - var pageLink = 'https://' + page.top_link + ''
+          else
+            - var pageLink = '' + page.top_link + ''
+          .change-button-group
+            a.change-button(href=pageLink)
+              <i class="fas fa-chevron-right"></i>
+              span.change-button-text= page.top_text || _p('关于本页')
