@@ -30,7 +30,7 @@ if theme.menu
                   use(xlink:href=`#`+ icon_label)
             span=' '+ trim(labelArray[0])
             i.fas.fa-chevron-down
-          ul.menus_item_child
+          ul.menus_item_child(style=`left:`+ (-55 * Object.keys(value).length + 39) + `px;`)
             each val,lab in value 
               - const valArray = val.split('||')
               li
