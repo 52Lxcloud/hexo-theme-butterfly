@@ -237,7 +237,7 @@ ul.menus_item_child {
 /*字体*/
 @font-face{
   font-family:'aqqxs' ;  /* 字体名自定义即可 */
-  src:url('https://unpkg.com/lxcloud-blog@1.0.3/font/ZhuZiAWan.ttf'); /* 字体文件路径 */
+  src:url('https://jsd.012700.xyz/npm/lxcloud-blog@1.0.3/font/ZhuZiAWan.ttf'); /* 字体文件路径 */
   font-display : swap;
 }
 body {
@@ -313,5 +313,93 @@ body {
 }
 /*修改评论输入默认高度*/
 .tk-input .el-textarea__inner {
-    min-height: 160px !important;
+    min-height: 130px !important;
+}
+/*固定盒子大小防止在像素大于2000px导致拉伸变形*/
+@media screen and (min-width: 2000px) {
+  .layout {
+    max-width: 1200px !important;
+  }
+}
+
+/* page顶部样式 */
+.content.content-item.card-content {
+  height: 19rem;
+  color: var(--white);
+  overflow: hidden;
+  margin-top: 0;
+  border-radius: 12px;
+  border: 1px solid #e3e8f7;
+  box-shadow: 0 8px 16px -4px #fef5ef2e;
+}
+.content-item .card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+.content-item .content-item-tips {
+  opacity: .8;
+  font-size: 16px;
+  margin-bottom: .5rem;
+}
+.content-item .card-content .content-item-title {
+  margin-bottom: .5rem;
+}
+.content-item .content-item-title {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+}
+.content-item .content-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content-item .content-bottom .tips {
+  font-weight: bold;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.content-item .card-content .change-button-group .change-button {
+  height: 40px;
+  width: auto;
+  padding: 0 22px;
+  border-radius: 20px;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  transition: .3s;
+  cursor: pointer;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateZ(0);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
+}
+.content-item .card-content .change-button-group .change-button i {
+  margin-right: 4px;
+  font-weight: bold;
+}
+#page:has(#card-content) .content-item .card-content .change-button-group .change-button:hover {
+  background: #99CC99;
+}
+/* 响应式 */
+@media screen and (max-width: 768px) {
+  .content-item .card-content {
+    padding: 1rem 1rem;
+  }
+  .content-item .card-content .change-button-group .change-button {
+    width: 60px;
+  }
+  .content-item .card-content .change-button-group .change-button i {
+    margin-right: -3px;
+  }
+  .content-item .card-content .change-button-group .change-button-text {
+    display: none;
+  }
 }
