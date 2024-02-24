@@ -236,18 +236,19 @@ ul.menus_item_child {
 }
 /*字体*/
 @font-face{
-  font-family:'aqqxs' ;  /* 字体名自定义即可 */
-  src:url('https://jsd.012700.xyz/npm/lxcloud-blog@1.0.3/font/ZhuZiAWan.ttf'); /* 字体文件路径 */
+  font-family:'zzaw' ;  /* 字体名自定义即可 */
+  src:url('https://font.onmicrosoft.cn/lxcloud-blog@1.0.3/font/ZhuZiAWan.ttf'); /* 字体文件路径 */
   font-display : swap;
 }
 body {
-  font-family: 'aqqxs', sans-serif;
+  font-family: 'zzaw', sans-serif;
 }
 #article-container code,#article-container pre {
-  font-family: 'aqqxs', sans-serif !important; /* code标签以及代码块 */
+  font-family: 'zzaw', sans-serif !important; /* code标签以及代码块 */
 }
 /* 双栏卡片主页文章*/
 #recent-posts {
+  text-align: center;/*首页标题居中*/
   margin-top: -1rem; /*头部为空时抵消间隔，若有磁贴或日历请注释掉该行*/
   align-content: flex-start;
   display: flex;
@@ -321,7 +322,10 @@ body {
     max-width: 1200px !important;
   }
 }
-
+/*调整标签外挂中Note内边距*/
+.note{
+	padding: 8px;
+}
 /* page顶部样式 */
 .content.content-item.card-content {
   height: 19rem;
