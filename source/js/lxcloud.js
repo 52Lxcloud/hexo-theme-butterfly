@@ -1,12 +1,3 @@
-/**
- * 解决IOS设备表单input聚焦时页面放大问题
- */
-// 获取视口对象
-const viewport = document.querySelector('meta[name="viewport"]');
-
-// 设置视口属性
-viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no');
-
 function LxDOMReady() {
   // 如果当前页有评论就执行函数
   if (document.getElementById('post-comment')) owoBig();
