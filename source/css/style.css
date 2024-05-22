@@ -540,3 +540,31 @@ h6::before {
   -webkit-animation: ccc 6s linear infinite;
   animation: ccc 6s linear infinite;
 }
+
+/* 文章目录栏模糊 */
+#aside-content #card-toc .toc-content .toc-link:not(.active) span {
+  opacity: .6;
+  cursor: pointer;
+  filter: blur(1px);
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  -ms-transition: .3s;
+  transition: .3s
+}
+
+#aside-content #card-toc:hover .toc-content .toc-link:not(.active) span {
+  filter: blur(0);
+  opacity: 1;
+  -ms-filter: none;
+  filter: none
+}
+
+/* 目录栏悬浮/点击颜色 */
+#aside-content #card-toc .toc-content .toc-link:hover {
+  color: #99CC99;
+}
+#aside-content #card-toc .toc-content .toc-link.active {
+  background: none; 
+  color: #99CC99;
+}
