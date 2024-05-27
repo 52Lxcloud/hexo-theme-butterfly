@@ -564,7 +564,11 @@ h6::before {
 #aside-content #card-toc .toc-content .toc-link:hover {
   color: #99CC99;
 }
+
+/* 目录栏选中样式 */
 #aside-content #card-toc .toc-content .toc-link.active {
   background: none; 
   color: #99CC99;
+  font-size: 18px;
+  font-weight: 700;
 }
