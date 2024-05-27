@@ -81,11 +81,11 @@
               i.fa-solid.fa-spinner.fa-spin
         else if theme.busuanzi.page_pv
           +pvBlock('','post-meta-pv-cv','')
-            span#busuanzi_value_page_pv
+            span#busuanzi_page_pv
               i.fa-solid.fa-spinner.fa-spin
       else if theme.busuanzi.page_pv
         +pvBlock('','post-meta-pv-cv','')
-          span#busuanzi_value_page_pv
+          span#busuanzi_page_pv
             i.fa-solid.fa-spinner.fa-spin
 
       if comments.count && !comments.lazyload && page.comments !== false && comments.use
