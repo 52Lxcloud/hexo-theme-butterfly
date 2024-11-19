@@ -62,15 +62,15 @@ aside:
   card_recent_post: 最新文章
   card_webinfo:
     headline: 网站信息
-    article_name: 文章数目
+    article_name: 📔文章数目
     runtime:
-      name: 运行时间
+      name: ⏰运行时长
       unit: 天
     last_push_date:
-      name: 最后更新时间
-    site_wordcount: 本站总字数
-    site_uv_name: 本站访客数
-    site_pv_name: 本站总浏览量
+      name: ✒️最后更新
+    site_wordcount: 📑全站字数
+    site_uv_name: 👨‍🌾本站访客
+    site_pv_name: 🔖访问次数
   more_button: 查看更多
   card_newest_comments:
     headline: 最新评论
