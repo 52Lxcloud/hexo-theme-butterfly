@@ -10,8 +10,11 @@ block content
       !=partial('includes/third-party/comments/index', {}, {cache: true})
 
   #page(class=noCardLayout)
-    if top_img === false && page.title
-      .page-title= page.title
+    if page.top_page && page.top_page === true
+      include includes/page/change.pug
+    else
+      if top_img === false
+        h1.page-title= page.title
 
     case page.type
       when 'tags'
