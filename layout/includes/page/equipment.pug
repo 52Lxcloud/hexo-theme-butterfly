@@ -1,0 +1,58 @@
+script.
+    var essay = {
+      commentText: function(e) {
+        if (e == "undefined" || e == "null") e = "好棒！";
+        var n = document.getElementsByClassName("el-textarea__inner")[0],
+          t = document.createEvent("HTMLEvents");
+        if (!n) return;
+        t.initEvent("input", !0, !0);
+        var o = essay.replaceAll(e, "\n", "\n> ");
+        (n.value = "> " + o + "\n\n"), n.dispatchEvent(t);
+        var i = document.querySelector("#post-comment")
+          .offsetTop;
+        window.scrollTo(0, i - 80),
+          n.focus(),
+          n.setSelectionRange(-1, -1),
+          document.getElementById("comment-tips") && document.getElementById("comment-tips")
+          .classList.add("show");
+      },
+      replaceAll: function (e, n, t) {
+        return e.split(n).join(t);
+      }
+    }
+
+#equipment
+  - var result = ''
+  each i in site.data.equipment
+    - let className = i.class_name ? markdown(`## ${i.class_name}`) : ""
+    - let classDesc = i.class_desc ? `<div class="equipment-desc">${i.class_desc}</div>` : ""
+
+    - let listResult = `${className}${classDesc} `
+    - let listContent = ''
+    each j in i.equipment_list
+      - let details = ''
+      -
+        if (j.details_link) {
+          details = `<a href="${j.details_link}" title="本站关于 ${j.name} 的产品体验报告" target="_blank" rel="external nofollow">查看文章</a>`
+        } else if (j.details_flink) {
+          details = `<a href="${j.details_flink}" title="跳转到 ${j.name} 的产品详情" target="_blank" rel="external nofollow">详情</a>`
+        }
+        listContent += `
+          <div class="equipment-box">
+            <img src="${j.image}">
+            <div class="equipment-content">
+              <div class="equipment-name">${j.name}</div>
+              <div class="equipment-custom">${j.custom}</div>
+              <div class="equipment-opinion">${j.opinion}</div>
+              <div class="equipment-box-more">
+                ${details}
+                <div class="bber-reply" onclick="essay.commentText('${j.name} (${j.custom})')">
+                  <i class="fas fa-comments"></i>
+                </div>
+              </div>
+            </div>
+          </div>`
+      -
+    - listResult += `<div class="equipment">${listContent}</div>`
+    - result += listResult
+  != result + page.content
